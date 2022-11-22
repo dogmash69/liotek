@@ -1,0 +1,9 @@
+th {
+    text-align: left;
+    background-color: lightblue;
+}
+
+td {
+    width: 45%;
+    background-color: lightgray;
+}
