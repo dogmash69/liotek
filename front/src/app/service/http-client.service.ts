@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class Books{
   constructor(
@@ -27,26 +27,51 @@ export class HttpClientService {
   }
 
   getBooks(){
-       return this.httpClient.get<Books[]>('http://localhost:8080/books');
+    let username='admin'
+    let password='password'
+
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+       return this.httpClient.get<Books[]>('http://localhost:8080/books',{headers});
   }
 
   public deleteBook(book: any) {
-    return this.httpClient.delete<Books>("http://localhost:8080/books" + "/"+ book.id);
+    let username='admin'
+    let password='password'
+
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    return this.httpClient.delete<Books>("http://localhost:8080/books" + "/"+ book.id,{headers});
   }
 
   public createBook(book: any) {
-    return this.httpClient.post<Books>("http://localhost:8080/books", book);
+    let username='admin'
+    let password='password'
+
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    return this.httpClient.post<Books>("http://localhost:8080/books", book,{headers});
   }
 
   getUsers(){
-       return this.httpClient.get<Users[]>('http://localhost:8080/users');
+    let username='admin'
+    let password='password'
+
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+       return this.httpClient.get<Users[]>('http://localhost:8080/users',{headers});
   }
 
   public deleteUser(user: any) {
-    return this.httpClient.delete<Users>("http://localhost:8080/users" + "/"+ user.id);
+    let username='admin'
+    let password='password'
+
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    return this.httpClient.delete<Users>("http://localhost:8080/users" + "/"+ user.id,{headers});
   }
 
   public createUser(user: any) {
-    return this.httpClient.post<Users>("http://localhost:8080/users", user);
+    let username='admin'
+    let password='password'
+
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    return this.httpClient.post<Users>("http://localhost:8080/users", user,{headers});
   }
+
 }

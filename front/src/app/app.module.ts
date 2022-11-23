@@ -10,6 +10,8 @@ import { AddBookComponent } from './add-book/add-book.component';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AddUserComponent } from './add-user/add-user.component';
     AddBookComponent,
     HeaderComponent,
     UserComponent,
-    AddUserComponent
+    AddUserComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
