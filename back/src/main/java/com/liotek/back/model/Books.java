@@ -1,20 +1,22 @@
 package com.liotek.back.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 //import javax.persistence.Id;
 @Entity
 public class Books {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
     private String author;
     private String genre;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private Users users;
+
 
     public Books(){
 
@@ -57,5 +59,12 @@ public class Books {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }

@@ -2,16 +2,10 @@ DROP DATABASE IF EXISTS `bibli`;
 CREATE DATABASE  IF NOT EXISTS `bibli` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `bibli`;
 
-DROP TABLE IF EXISTS `borrow`;
-DROP TABLE IF EXISTS `users`;
-DROP TABLE IF EXISTS `books`;
 
-CREATE TABLE `borrow` (
-     `borrowId` INT NOT NULL AUTO_INCREMENT,
-     `bookId` INT NOT NULL,
-     `userId` INT NOT NULL
-      PRIMARY KEY (`borrowId`)
-);
+DROP TABLE IF EXISTS `books`;
+DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `borrows`;
 
 CREATE TABLE `users` (
       `id` INT NOT NULL AUTO_INCREMENT,

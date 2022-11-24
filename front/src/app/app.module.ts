@@ -12,6 +12,8 @@ import { UserComponent } from './user/user.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { BorrowBookComponent } from './borrow-book/borrow-book.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { LogoutComponent } from './logout/logout.component';
     UserComponent,
     AddUserComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    BorrowBookComponent,
   ],
   imports: [
     BrowserModule,

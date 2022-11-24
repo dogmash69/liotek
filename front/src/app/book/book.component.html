@@ -1,20 +1,23 @@
 <div>
-    <table>
+  <table>
     <thead>
-    <tr>
-      <th>title</th>
-      <th>author</th>
-      <th>genre</th>
+      <tr>
+        <th>title</th>
+        <th>author</th>
+        <th>genre</th>
+        <!-- <th>Borrower</th> -->
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let book of books">
-            <td>{{book.title}}</td>
-            <td>{{book.author}}</td>
-            <td>{{book.genre}}</td>
-            <td><button (click)="deleteBook(book)"> Delete Book</button></td>
-            </tr>
+      <tr *ngFor="let book of books">
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.genre}}</td>
+        <!-- <td>{{book.users.name}}</td> -->
+        <button (click)="deleteBook(book)"> Delete Book</button>
+        <!-- <button (click)="deleteBook(book)"> Users</button> -->
+      </tr>
     </tbody>
-      </table>
-  
-    </div>
+  </table>
+
+</div>

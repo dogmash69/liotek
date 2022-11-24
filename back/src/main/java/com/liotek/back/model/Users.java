@@ -12,7 +12,6 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
-
     private String birthday;
 
     public Users(){
@@ -41,11 +40,5 @@ public class Users {
         this.name = name;
     }
 
-    public String getBirthday() {
-        return birthday;
-    }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
 }

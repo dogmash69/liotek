@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Books, Borrow, HttpClientService, Users } from '../service/http-client.service';
 
-
 @Component({
-  selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrls: ['./book.component.css']
+  selector: 'app-borrow-book',
+  templateUrl: './borrow-book.component.html',
+  styleUrls: ['./borrow-book.component.css']
 })
-export class BookComponent implements OnInit{
+export class BorrowBookComponent implements OnInit {
 
   books: Books[] = [];
 
   users: Users[] = [];
 
-  borrows: Borrow[] = [];
+  borrow: Borrow = new Borrow("", "", "");
 
 
   constructor( private httpClientService:HttpClientService){}
@@ -21,14 +20,17 @@ export class BookComponent implements OnInit{
   ngOnInit(): void {
     this.httpClientService.getBooks().subscribe(response => {this.books = response;});
     this.httpClientService.getUsers().subscribe(response => {this.users = response;});
-    this.httpClientService.getBorrows().subscribe(response => {this.borrows = response;}); 
   }
 
+  createBorrow(): void {
+    let test = this.borrow
+    console.log(test)
+    this.httpClientService.createBorrow(this.borrow)
+        .subscribe( data => {
+          alert("Book created !");
+        });
 
-  deleteBook(book: Books): void {
-    this.httpClientService.deleteBook(book)
-      .subscribe( data => {
-        this.books = this.books.filter(u => u !== book);
-      })
   };
+
+
 }

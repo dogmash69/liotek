@@ -1,0 +1,11 @@
+<div>
+<select id="selectBook" [(ngModel)]="borrow.title">
+    <option value="null">{{null}}</option>
+    <option *ngFor="let book of books" value={{book.title}}>{{book.title}}</option>
+</select>
+<select id="selectUser" [(ngModel)]="borrow.name">
+    <option value="null">{{null}}</option>
+    <option *ngFor="let user of users" value={{user.name}} >{{user.name}}</option>
+</select>
+<button (click)="createBorrow()">SEND</button>
+</div>
